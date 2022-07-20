@@ -22,11 +22,12 @@ void Forca::inciaJogo() {
 
     palavra_secreta = sorteia_palavra();
 
-    while (nao_acertou(palavra_secreta, chutou) && !forca) {
+    while (!forca) {
         system("cls");
-
         Forca::mostrar_forca(chutes_errados.size(), forca);
         imprime_palavra(palavra_secreta, chutou);
+        if (!nao_acertou(palavra_secreta, chutou)) forca = true;
+
         if (!forca) {
             
             Forca::imprime_erros(chutes_errados);

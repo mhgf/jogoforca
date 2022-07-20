@@ -11,4 +11,7 @@ void chuta(std::map<char, bool>& chutou, std::vector<char>& chutes_errados, std:
 
     chute = toupper(chute);
     chutou[chute] = true;
+    if (!letra_existe(chute, palavra_secreta)) {
+        chutes_errados.push_back(chute);
+    }
 }
