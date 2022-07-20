@@ -27,6 +27,7 @@
     <ClCompile Include="inicia_jogo.cpp" />
     <ClCompile Include="letra_existe.cpp" />
     <ClCompile Include="le_arquivo.cpp" />
+    <ClCompile Include="mostrar_forca.cpp" />
     <ClCompile Include="nao_acertou.cpp" />
     <ClCompile Include="salva_arquivo.cpp" />
     <ClCompile Include="sorteia_palavra.cpp" />
@@ -40,7 +41,9 @@
     <ClInclude Include="inicia_jogo.hpp" />
     <ClInclude Include="letra_existe.hpp" />
     <ClInclude Include="le_arquivo.hpp" />
+    <ClInclude Include="mostar_forcar.hpp" />
     <ClInclude Include="nao_acertou.hpp" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="salva_arquivo.hpp" />
     <ClInclude Include="sorteia_palavra.hpp" />
   </ItemGroup>

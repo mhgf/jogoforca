@@ -9,24 +9,31 @@
 #include "imprime_erros.hpp"
 #include "imprime_palavra.hpp"
 #include "chuta.hpp"
-#include "adiciona_palavra.hpp"
 #include "nao_acertou.hpp"
 #include "inicia_jogo.hpp"
+#include "mostar_forcar.hpp"
 
 void Forca::inciaJogo() {
     using namespace std;
-    static string palavra_secreta;
-    static map<char, bool> chutou;
-    static vector<char> chutes_errados;
+    string palavra_secreta;
+    map<char, bool> chutou;
+    vector<char> chutes_errados;
+    bool forca = false;
 
     palavra_secreta = sorteia_palavra();
 
-    while (nao_acertou(palavra_secreta, chutou) && chutes_errados.size() < 5) {
-        Forca::imprime_erros(chutes_errados);
+    while (nao_acertou(palavra_secreta, chutou) && !forca) {
+        system("cls");
 
+        Forca::mostrar_forca(chutes_errados.size(), forca);
         imprime_palavra(palavra_secreta, chutou);
+        if (!forca) {
+            
+            Forca::imprime_erros(chutes_errados);
 
-        chuta(chutou, chutes_errados, palavra_secreta);
+
+            chuta(chutou, chutes_errados, palavra_secreta);
+       }
     }
 
     cout << "Fim de jogo!" << endl;
@@ -37,12 +44,7 @@ void Forca::inciaJogo() {
     }
     else {
         cout << "Parabéns! Você acertou a palavra secreta!" << endl;
-
-        cout << "Você deseja adicionar uma nova palavra ao banco? (S/N) ";
-        char resposta;
-        cin >> resposta;
-        if (resposta == 'S') {
-            adiciona_palavra();
-        }
     }
+
+    system("pause");
 }
