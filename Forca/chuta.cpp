@@ -5,9 +5,11 @@
 
 void chuta(std::map<char, bool>& chutou, std::vector<char>& chutes_errados, std::string& palavra_secreta)
 {
-    std::cout << "Seu chute: ";
+    using namespace std;
+
+    cout << "Seu chute: ";
     char chute;
-    std::cin >> chute;
+    cin >> chute;
 
     chute = toupper(chute);
     chutou[chute] = true;

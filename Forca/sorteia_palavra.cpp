@@ -4,7 +4,9 @@
 
 std::string sorteia_palavra()
 {
-    std::vector<std::string> palavras = le_arquivo();
+    using namespace std;
+
+    vector<string> palavras = le_arquivo();
 
     srand(time(NULL));
     int indice_sorteado = rand() % palavras.size();

@@ -3,13 +3,14 @@
 
 void imprime_palavra(std::string& palavra_secreta, std::map<char, bool>& chutou)
 {
+    using namespace std;
     for (char letra : palavra_secreta) {
         if (chutou[letra]) {
-            std::cout << letra << " ";
+            cout << letra << " ";
         }
         else {
-            std::cout << "_ ";
+            cout << "_ ";
         }
     }
-    std::cout << std::endl;
+    cout << endl;
 }

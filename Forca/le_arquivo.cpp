@@ -3,7 +3,8 @@
 #include "le_arquivo.hpp"
 
 std::vector<std::string> le_arquivo(){
-    std::ifstream arquivo;
+    using namespace std;
+   ifstream arquivo;
     arquivo.open("palavras.txt");
 
     if(arquivo.is_open()){
@@ -11,10 +12,10 @@ std::vector<std::string> le_arquivo(){
         arquivo >> quantidade_palavras;
 
 
-        std::vector<std::string> palavras_do_arquivo;
+        vector<string> palavras_do_arquivo;
 
         for(int i=0;i<quantidade_palavras;i++){
-            std::string palavra_lida;
+           string palavra_lida;
             arquivo >> palavra_lida;
             palavras_do_arquivo.push_back(palavra_lida);
         }
@@ -23,7 +24,7 @@ std::vector<std::string> le_arquivo(){
         return palavras_do_arquivo;
     }
     else{
-        std::cout << "Não foi possível acessar o banco de palavras." << std::endl;
+        cout << "Não foi possível acessar o banco de palavras." << endl;
         exit(0);
     }
 }

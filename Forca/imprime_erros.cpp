@@ -4,12 +4,11 @@
 
 void Forca::imprime_erros(const std::vector<char>& chutes_errados)
 {
+    using namespace std;
 
-
-
-    std::cout << std::endl << "Chutes errados: ";
+    cout << endl << "Chutes errados: ";
     for (char letra: chutes_errados) {
-        std::cout << letra << " ";
+        cout << letra << " ";
     }
-    std::cout << std::endl;
+    cout << endl;
 }

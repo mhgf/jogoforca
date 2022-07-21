@@ -10,15 +10,11 @@ int main()
 {
 	setlocale(LC_ALL, "Portuguese_Brasil");
 
-
-	int op;
-
+	int op = 0;
 	do {
 		cin.clear();
-		op = 0;
 		system("cls");
 		imprime_cabecalho();
-
 
 		cout << "Ecolha uma opção: " << endl
 			<< "1 - Inica o Jogo." << endl
@@ -26,7 +22,6 @@ int main()
 			<< "3 - Listar palavras." << endl
 			<< "4 - sair." << endl << endl;
 
-		
 		cin >> op;
 
 		if (cin.fail())
@@ -37,16 +32,18 @@ int main()
 			system("pause");
 		}
 		else {
+			using namespace Forca;
 			switch (op)
 			{
+				
 				case 1: 
-					Forca::inciaJogo();
+					inciaJogo();
 					break;
 				case 2:
-					Forca::adiciona_palavra();
+					adiciona_palavra();
 					break;
 				case 3:
-					Forca::lista_palavras();
+					lista_palavras();
 					break;
 				default:
 					break;
